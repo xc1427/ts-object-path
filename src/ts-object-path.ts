@@ -39,8 +39,8 @@ export function getPath<TRoot, T>(proxy: ObjProxyArg<TRoot, T>): PropertyKey[] {
  * For the sake of "overloading" on return type
  * @param proxy
  */
-export function getPlainPath<TRoot, T>(proxy: ObjProxyArg<TRoot, T>): Array<string | number> {
-  return getPath(proxy) as any
+export function getPlainPath<TRoot, T>(proxy?: ObjProxyArg<TRoot, T>): Array<string | number> {
+  return getPath(proxy!) as any
 }
 
 export function isProxy<TRoot, T>(value: any): value is ObjPathProxy<TRoot, T> {
