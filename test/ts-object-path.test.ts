@@ -28,6 +28,7 @@ describe('getPath test', () => {
     const p = createProxy<ITest>()
     expect(getPath(p.one)).toEqual(['one'])
     expect(getPath(p.three.second)).toEqual(['three', 'second'])
+    expect(getPath(p.four)).toEqual(['four'])
     expect(getPath(p.four[4].second)).toEqual(['four', 4, 'second'])
   })
   it('Get undefined', () => {
@@ -44,6 +45,7 @@ describe('getPlainPath test', () => {
     const p = createProxy<ITest>()
     expect(getPlainPath(p.one)).toEqual(['one'])
     expect(getPlainPath(p.three.second)).toEqual(['three', 'second'])
+    expect(getPlainPath(p.four)).toEqual(['four'])
     expect(getPlainPath(p.four[4].second)).toEqual(['four', 4, 'second'])
   })
   it('Get undefined', () => {
